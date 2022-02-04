@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,12 +6,26 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public float xMin, xMax, zMin, zMax;
+    public GameObject shot;
+    public Transform shotContent;
+    public float fireRate;
+    public float nextFire;
+    
 
     private Rigidbody _rigidbody;
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetButton("Fire1")&& Time.time>nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(shot,shotContent.position,shotContent.rotation);
+        }
     }
 
     // Update is called once per frame
