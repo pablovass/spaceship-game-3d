@@ -1,8 +1,10 @@
 using System.Collections;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public Vector3 spawnPosition;
     public GameObject shot;
     public Transform shotSpawn;
     public GameObject asteroid;
@@ -59,7 +61,9 @@ public class Player : MonoBehaviour
         {
             for (int i = 0; i < hazartCount; i++)
             {
-                Vector3 spawnPosition = new Vector3(Random.Range(-spawnValues.x.));
+                int r=Random.Range(0,6) ;
+                //Vector3 spawnPosition = new Vector3(Random.Range(spawnValues.x));
+                spawnPosition = new Vector3(r,7,r);
                 Quaternion spawnRotation = Quaternion.identity;
                 Instantiate(asteroid, spawnPosition, spawnRotation);
                 yield return new WaitForSeconds(spawnWait);
