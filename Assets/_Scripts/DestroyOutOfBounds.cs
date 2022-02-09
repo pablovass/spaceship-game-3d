@@ -1,10 +1,11 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destroy : MonoBehaviour
+public class DestroyOutOfBounds : MonoBehaviour
 {
+    private float topBound = 4.8f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -14,12 +15,9 @@ public class Destroy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void OnTriggerEnter(Collider asteroid)
-    {
-        Destroy(asteroid);
-        Destroy(gameObject);
+        if (this.transform.position.z > topBound)
+        {
+            Destroy(this.gameObject);
+        }    
     }
 }
