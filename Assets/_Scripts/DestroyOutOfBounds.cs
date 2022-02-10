@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// ocurre el game over and destruye los elementos
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class DestroyOutOfBounds : MonoBehaviour
         }  
         if (this.transform.position.z < LowerBound)
         {
+            Debug.Log("GAME OVER!!!!");
             Destroy(this.gameObject);
         }    
     }

@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
         {
             nextFire = Time.time + fireRate;
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            GetComponent<AudioSource>().Play();
         }
     }
 
