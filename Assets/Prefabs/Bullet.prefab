@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5907582577433307677}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62,10 +62,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.04
+  m_Radius: 0.056568816
   m_Height: 0.4574209
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0.041289598}
+  m_Center: {x: 0, y: 0.0050472543, z: 0.041289598}
 --- !u!114 &-7447807676741553299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70d38280d4632c4e91ce95a5d0cb584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 100000, guid: f75468363e2394440a081e9c175e6c93, type: 3}
 --- !u!1 &4531507733774630270
 GameObject:
   m_ObjectHideFlags: 0
